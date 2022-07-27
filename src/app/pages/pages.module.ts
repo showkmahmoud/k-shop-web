@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LandingLayoutComponent } from './components/landing-layout/landing-layout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
-
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -17,11 +17,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     HomeComponent,
     LandingLayoutComponent,
     NotFoundComponent,
-    WishlistComponent
+    WishlistComponent,
   ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule
-  ]
+  imports: [CommonModule, PagesRoutingModule, CoreModule],
 })
-export class PagesModule { }
+export class PagesModule {}
