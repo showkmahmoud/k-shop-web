@@ -19,8 +19,8 @@ export const navbarData: (NavbarItem | DropdwenNavItem)[] = [
       { label: 'الاكسسوارات', link: '', type: 'item' },
     ],
   },
-  { label: 'الرئيسية', link: '', type: 'item' },
-  { label: 'قائمة الامنيات', link: 'k-shop/wishlist', type: 'item' },
-  { label: 'تواصل معنا', link: 'k-shop/wishlist', type: 'item' },
-  { label: 'من نحن', link: 'k-shop/wishlist', type: 'item' },
+  { label: 'الرئيسية', link: '/k-shop/home', type: 'item' },
+  { label: 'قائمة الامنيات', link: '/k-shop/wishlist', type: 'item' },
+  { label: 'تواصل معنا', link: '/k-shop/contact-us', type: 'item' },
+  { label: 'من نحن', link: '/k-shop/about-us', type: 'item' },
 ];

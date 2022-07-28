@@ -8,6 +8,7 @@
   --primary-btn-bg: #23104e;
   --sec-btn-bg: #26a37c;
   --new-btn-bg: #032326;
+  --icon-color: #302ca2;
   --color-eaeaea: #eaeaea;
   --color-ffe621: #ffe621;
   --color-f6f6f6: #f6f6f6;
@@ -46,6 +47,9 @@ span,
 a,
 img {
   display: inline-block;
+}
+a:focus {
+  color: var(--main-color);
 }
 .container {
   padding-top: 15px;

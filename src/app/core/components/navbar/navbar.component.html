@@ -1,2 +1,33 @@
 <app-upper-navbar></app-upper-navbar>
-<nav class="nav row"></nav>
+
+<ul class="nav row">
+  <li class="col-s-12" *ngFor="let item of navbarData">
+    <div
+      *ngIf="item.type === 'dropdown'"
+      class="dropdown-btn"
+      (click)="toggle()"
+      [ngClass]="{ active: dropDownOpen }"
+    >
+      <a
+        >{{ item.label }}
+
+        <span class="arrow-icon">></span>
+      </a>
+
+      <ul class="dropdown-list" *ngIf="dropDownOpen">
+        <li class="dropdown-item" *ngFor="let li of item.items">
+          <a [routerLink]="li.link">{{ li.label }}</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="item.type === 'item'">
+      <a
+        [routerLink]="item.link"
+        routerLinkActive="active"
+        (click)="dropDownOpen = false"
+        [ngClass]="{ 'in-active': dropDownOpen }"
+        >{{ item.label }}</a
+      >
+    </div>
+  </li>
+</ul>
