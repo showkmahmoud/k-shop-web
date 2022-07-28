@@ -1,1 +1,31 @@
-<p>upper-navbar works!</p>
+<ul class="navbar row justify-space-between">
+  <li class="navbar-logo">
+    <img
+      src="assets/logo.png
+    "
+      alt=""
+    />
+  </li>
+  <li class="search-item row" [formGroup]="form">
+    <i-bs
+      (click)="onSubmit(form.value)"
+      class="search-icon"
+      name="search"
+      width="30"
+      height="30"
+    >
+    </i-bs>
+    <input
+      class="search-input input"
+      formControlName="search"
+      type="text"
+      placeholder="عم تبحث ؟"
+    />
+  </li>
+  <li class="user-item">
+    <div class="user">
+      <i-bs class="user-icon" name="person-fill" width="30" height="30"> </i-bs>
+    </div>
+  </li>
+  <li class="cart-item"><div class="cart-wrapper"></div></li>
+</ul>

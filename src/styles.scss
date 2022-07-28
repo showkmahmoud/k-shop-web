@@ -1,4 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  /* Colors: */
+  --main-color: #302ca2;
+  --main-bg: #ffffff;
+  --sec-bg: #b7aeca;
+  --input-bg: #efeef8;
+  --primary-btn-bg: #23104e;
+  --sec-btn-bg: #26a37c;
+  --new-btn-bg: #032326;
+  --color-eaeaea: #eaeaea;
+  --color-ffe621: #ffe621;
+  --color-f6f6f6: #f6f6f6;
+
+  /* Font/text values */
+  --unnamed-font-family-cairo: Cairo;
+  --unnamed-font-style-normal: normal;
+  --unnamed-font-weight-normal: normal;
+  --unnamed-font-weight-bold: bold;
+  --unnamed-font-size-12: 12px;
+  --unnamed-font-size-14: 14px;
+  --unnamed-font-size-16: 16px;
+  --unnamed-font-size-18: 18px;
+  --unnamed-font-size-24: 24px;
+  --unnamed-character-spacing-0: 0px;
+  --unnamed-line-spacing-24: 24px;
+  --unnamed-line-spacing-30: 30px;
+  --unnamed-line-spacing-33: 33px;
+  --unnamed-line-spacing-45: 45px;
+}
 * {
   padding: 0;
   margin: 0;
@@ -42,4 +71,37 @@ ul {
 }
 a {
   text-decoration: none;
+}
+.input {
+  width: 1429px;
+  padding-right: 70px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: var(--input-bg);
+}
+input:focus {
+  outline: transparent;
+}
+::placeholder {
+  color: var(--main-color);
+
+  font: normal normal normal 12px/24px Cairo;
+}
+@media (max-width: 74.9375em) {
+  .col-m-7 {
+    width: 60%;
+    margin: 0 auto 30px;
+    padding: 0;
+  }
+  .col-m-6 {
+    width: 49%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 74.9375em) {
+  .col-s-12 {
+    width: 100%;
+    margin: 0 auto 30px;
+    padding: 0 16px;
+  }
 }

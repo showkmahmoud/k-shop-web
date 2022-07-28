@@ -1,9 +1,9 @@
-type NavbarItem = {
+export type NavbarItem = {
   type: 'item';
   label: string;
   link: string;
 };
-type DropdwenNavItem = {
+export type DropdwenNavItem = {
   type: 'dropdown';
   label: string;
   items: NavbarItem[];

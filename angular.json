@@ -87,7 +87,7 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss", "src/front_end_task.scss"],
+            "styles": ["src/styles.scss", "src/k-shop.scss"],
             "scripts": []
           }
         }
