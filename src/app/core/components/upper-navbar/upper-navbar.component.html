@@ -1,12 +1,24 @@
 <ul class="navbar row justify-space-between">
   <li class="navbar-logo">
-    <img
-      src="assets/logo.png
-    "
-      alt=""
-    />
+    <a routerLink="/k-shop/home">
+      <img
+        src="assets/logo.png
+  "
+        alt=""
+    /></a>
   </li>
-  <li class="search-item row" [formGroup]="form">
+
+  <li class="navbar-toggle">
+    <i-bs name="list" width="35" height="35" (click)="toggleMenu()"> </i-bs>
+  </li>
+
+  <li
+    class="search-item row navbar-item"
+    [ngClass]="{
+      'navbar-hide': menuOpen
+    }"
+    [formGroup]="form"
+  >
     <i-bs
       (click)="onSubmit(form.value)"
       class="search-icon"
@@ -22,12 +34,22 @@
       placeholder="عم تبحث ؟"
     />
   </li>
-  <li class="user-item">
+  <li
+    class="user-item navbar-item"
+    [ngClass]="{
+      'navbar-hide': menuOpen
+    }"
+  >
     <div class="user">
       <i-bs class="user-icon" name="person-fill" width="20" height="20"> </i-bs>
     </div>
   </li>
-  <li class="cart-item">
+  <li
+    class="cart-item navbar-item"
+    [ngClass]="{
+      'navbar-hide': menuOpen
+    }"
+  >
     <div class="cart-wrapper btn primary-btn">
       <p>سلة التسوق</p>
       <i-bs class="user-icon" name="cart3" width="20" height="20"> </i-bs>

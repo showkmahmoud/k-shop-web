@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class UpperNavbarComponent implements OnInit {
   navbar: (NavbarItem | DropdwenNavItem)[] = navbarData;
   form!: FormGroup;
+  menuOpen: boolean = true;
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -20,5 +21,8 @@ export class UpperNavbarComponent implements OnInit {
   }
   onSubmit(form: FormGroup) {
     console.log(form);
+  }
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }

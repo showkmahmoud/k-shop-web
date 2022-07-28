@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,7 @@ import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
     ReactiveFormsModule,
     CommonModule,
     NgxBootstrapIconsModule.pick(allIcons),
+    RouterModule,
   ],
   exports: [NavbarComponent, UpperNavbarComponent],
 })
