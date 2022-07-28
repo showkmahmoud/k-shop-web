@@ -2,6 +2,7 @@ ul {
   padding: 0 20px;
   height: 100px;
   background: var(--main-bg);
+  flex-wrap: nowrap;
 }
 li {
   margin-right: 10px;
@@ -22,12 +23,13 @@ img {
   color: var(--main-color);
   padding: 10px;
   position: absolute;
-  top: 23px;
+  top: 25px;
   z-index: 1;
   margin-right: 5px;
 }
 .search-input {
   position: relative;
+  width: 100%;
 }
 
 .user-item {
@@ -40,4 +42,17 @@ img {
 .user {
   background: var(--input-bg);
   border-radius: 10px;
+  height: 100%;
+  text-align: center;
+}
+
+.user {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-icon {
+  color: var(--primary-btn-bg);
 }
