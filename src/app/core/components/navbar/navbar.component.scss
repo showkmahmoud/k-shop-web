@@ -15,7 +15,6 @@ li a {
 a.active {
   color: var(--main-color);
 }
-
 .active {
   background: #e0def2;
   font-weight: bold;
@@ -26,6 +25,7 @@ a.active {
   font-weight: unset;
   border-right: unset;
 }
+//dropdown
 .dropdown-btn {
   position: relative;
   cursor: pointer;

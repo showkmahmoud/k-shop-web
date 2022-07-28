@@ -24,7 +24,6 @@ export class NavbarComponent implements OnInit {
   }
   onClick(event: any) {
     if (!this._eref.nativeElement.contains(event.target))
-      // or some similar check
       this.dropDownOpen = false;
   }
 }

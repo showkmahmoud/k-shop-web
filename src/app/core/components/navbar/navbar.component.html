@@ -1,25 +1,28 @@
 <app-upper-navbar></app-upper-navbar>
-
+<!-- lowe part of navbar -->
 <ul class="nav row">
   <li class="col-s-12" *ngFor="let item of navbarData">
+    <!-- if the item dropdown -->
     <div
       *ngIf="item.type === 'dropdown'"
       class="dropdown-btn"
       (click)="toggle()"
       [ngClass]="{ active: dropDownOpen }"
     >
+      <!-- dropdown label button -->
       <a
         >{{ item.label }}
 
         <span class="arrow-icon">></span>
       </a>
-
+      <!-- dropdown list -->
       <ul class="dropdown-list" *ngIf="dropDownOpen">
         <li class="dropdown-item" *ngFor="let li of item.items">
           <a [routerLink]="li.link">{{ li.label }}</a>
         </li>
       </ul>
     </div>
+    <!-- if the item not -->
     <div *ngIf="item.type === 'item'">
       <a
         [routerLink]="item.link"

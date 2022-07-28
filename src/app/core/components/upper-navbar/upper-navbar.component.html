@@ -1,4 +1,5 @@
 <ul class="navbar row justify-space-between">
+  <!-- navbar logo -->
   <li class="navbar-logo">
     <a routerLink="/k-shop/home">
       <img
@@ -7,11 +8,11 @@
         alt=""
     /></a>
   </li>
-
+  <!-- toggle button -->
   <li class="navbar-toggle">
     <i-bs name="list" width="35" height="35" (click)="toggleMenu()"> </i-bs>
   </li>
-
+  <!-- search input -->
   <li
     class="search-item row navbar-item"
     [ngClass]="{
@@ -34,6 +35,7 @@
       placeholder="عم تبحث ؟"
     />
   </li>
+  <!-- user button -->
   <li
     class="user-item navbar-item"
     [ngClass]="{
@@ -44,6 +46,7 @@
       <i-bs class="user-icon" name="person-fill" width="20" height="20"> </i-bs>
     </div>
   </li>
+  <!-- add-to-cart button -->
   <li
     class="cart-item navbar-item"
     [ngClass]="{
