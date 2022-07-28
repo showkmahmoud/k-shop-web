@@ -1,7 +1,7 @@
-import { NavbarItem, DropdwenNavItem } from './../../../shared/navbar.data';
 import { Component, OnInit } from '@angular/core';
 import { navbarData } from 'src/app/shared/navbar.data';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { DropdwenNavItem, NavbarItem } from 'src/app/shared/navbar.type';
 
 @Component({
   selector: 'app-upper-navbar',

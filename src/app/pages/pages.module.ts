@@ -9,6 +9,8 @@ import { LandingLayoutComponent } from './components/landing-layout/landing-layo
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CoreModule } from '../core/core.module';
+import { SwiperModule } from 'swiper/angular';
+import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CoreModule } from '../core/core.module';
     LandingLayoutComponent,
     NotFoundComponent,
     WishlistComponent,
+    HomeSliderComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule, CoreModule],
+  imports: [CommonModule, PagesRoutingModule, CoreModule, SwiperModule],
 })
 export class PagesModule {}

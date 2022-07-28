@@ -1,22 +1,34 @@
-export type NavbarItem = {
-  type: 'item';
-  label: string;
-  link: string;
-};
-export type DropdwenNavItem = {
-  type: 'dropdown';
-  label: string;
-  items: NavbarItem[];
-};
+import { CATEGORIES, DropdwenNavItem, NavbarItem } from './navbar.type';
+
 export const navbarData: (NavbarItem | DropdwenNavItem)[] = [
   {
     label: 'الاقسام',
     type: 'dropdown',
     items: [
-      { label: 'ازياء الرجال', link: '', type: 'item' },
-      { label: 'ازياء النساء', link: '', type: 'item' },
-      { label: 'الموبيلات', link: '', type: 'item' },
-      { label: 'الاكسسوارات', link: '', type: 'item' },
+      {
+        label: 'ازياء الرجال',
+
+        type: 'item',
+        category: CATEGORIES.menSection,
+      },
+      {
+        label: 'ازياء النساء',
+
+        type: 'item',
+        category: CATEGORIES.womensSection,
+      },
+      {
+        label: 'الموبيلات',
+
+        type: 'item',
+        category: CATEGORIES.mobilesSection,
+      },
+      {
+        label: 'الاكسسوارات',
+
+        type: 'item',
+        category: CATEGORIES.accessoriesSection,
+      },
     ],
   },
   { label: 'الرئيسية', link: '/k-shop/home', type: 'item' },

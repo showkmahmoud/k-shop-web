@@ -1,9 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import {
-  DropdwenNavItem,
-  navbarData,
-  NavbarItem,
-} from 'src/app/shared/navbar.data';
+import { navbarData } from 'src/app/shared/navbar.data';
+import { DropdwenNavItem, NavbarItem } from 'src/app/shared/navbar.type';
 
 @Component({
   selector: 'app-navbar',
