@@ -12,6 +12,8 @@ import { CoreModule } from '../core/core.module';
 import { SwiperModule } from 'swiper/angular';
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
+import { ProductsComponent } from './components/products/products.component';
+import { CategoriesLandingComponent } from './components/categories-landing/categories-landing.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
     NotFoundComponent,
     WishlistComponent,
     HomeSliderComponent,
+    ProductsComponent,
+    CategoriesLandingComponent,
   ],
   imports: [
     CommonModule,
