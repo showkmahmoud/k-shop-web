@@ -13,6 +13,8 @@ import { DropdwenNavItem, NavbarItem } from 'src/app/shared/navbar.type';
 export class NavbarComponent implements OnInit {
   navbarData: (NavbarItem | DropdwenNavItem)[] = navbarData;
   dropDownOpen: boolean = false;
+  menuOpen: boolean = true;
+
   constructor(private _eref: ElementRef) {}
 
   ngOnInit(): void {}
@@ -22,5 +24,8 @@ export class NavbarComponent implements OnInit {
   onClick(event: any) {
     if (!this._eref.nativeElement.contains(event.target))
       this.dropDownOpen = false;
+  }
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }

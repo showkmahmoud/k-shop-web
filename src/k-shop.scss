@@ -1,3 +1,33 @@
+:root {
+  /* Colors: */
+  --main-color: #302ca2;
+  --main-bg: #ffffff;
+  --sec-bg: #b7aeca;
+  --input-bg: #efeef8;
+  --primary-btn-bg: #23104e;
+  --sec-btn-bg: #26a37c;
+  --new-btn-bg: #032326;
+  --icon-color: #302ca2;
+  --color-eaeaea: #eaeaea;
+  --color-ffe621: #ffe621;
+  --color-f6f6f6: #f6f6f6;
+
+  /* Font/text values */
+  --unnamed-font-family-cairo: Cairo;
+  --unnamed-font-style-normal: normal;
+  --unnamed-font-weight-normal: normal;
+  --unnamed-font-weight-bold: bold;
+  --unnamed-font-size-12: 12px;
+  --unnamed-font-size-14: 14px;
+  --unnamed-font-size-16: 16px;
+  --unnamed-font-size-18: 18px;
+  --unnamed-font-size-24: 24px;
+  --unnamed-character-spacing-0: 0px;
+  --unnamed-line-spacing-24: 24px;
+  --unnamed-line-spacing-30: 30px;
+  --unnamed-line-spacing-33: 33px;
+  --unnamed-line-spacing-45: 45px;
+}
 /* Character Styles */
 .headline2-—-18pt {
   font-family: var(--unnamed-font-family-cairo);

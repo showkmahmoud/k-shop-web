@@ -1,1 +1,31 @@
-<p>home-slider works!</p>
+<div class="slider-content row">
+  <button (click)="slidePrev()"><</button>
+  <swiper
+    #swiper
+    [slidesPerView]="3"
+    [loop]="true"
+    [breakpoints]="{
+      '250': {
+        slidesPerView: 1
+      },
+      '768': {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      '1024': {
+        slidesPerView: 1,
+        spaceBetween: 30
+      }
+    }"
+  >
+    <ng-template *ngFor="let slide of sliderData" swiperSlide>
+      <div class="container">
+        <div class="swiper-slide">
+          <h1 class="header">{{ slide.header }}</h1>
+          <p class="description">{{ slide.description }}</p>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+  <button (click)="slideNext()">></button>
+</div>

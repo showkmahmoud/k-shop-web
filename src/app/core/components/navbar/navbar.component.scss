@@ -1,6 +1,5 @@
 .nav {
   background-color: var(--input-bg);
-  margin-top: 100px;
   padding: 0 25px;
 }
 li {
@@ -53,13 +52,43 @@ a.active {
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
+//toggle-btn
+.navbar-toggle {
+  display: none;
+}
+.navbar-toggle i-bs {
+  color: var(--main-color);
+}
+
 @media (max-width: 74.9375em) {
   .nav {
-    padding: 0;
+    padding: 5px 12px 0;
+  }
+  .navbar-toggle {
+    display: inline-flex;
+    margin-right: auto;
+    cursor: pointer;
+  }
+  .navbar-item {
+    width: 100%;
+  }
+  .navbar-hide {
+    display: none;
   }
 }
 @media (max-width: 47.9375em) {
   .nav {
-    padding: 0;
+    padding: 5px 12px 0;
+  }
+  .navbar-toggle {
+    display: inline-flex;
+    margin-right: auto;
+    cursor: pointer;
+  }
+  .navbar-item {
+    width: 100%;
+  }
+  .navbar-hide {
+    display: none;
   }
 }

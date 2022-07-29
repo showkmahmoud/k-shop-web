@@ -1,7 +1,17 @@
 <app-upper-navbar></app-upper-navbar>
 <!-- lowe part of navbar -->
 <ul class="nav row">
-  <li class="col-s-12" *ngFor="let item of navbarData">
+  <!-- toggle button -->
+  <li class="navbar-toggle">
+    <i-bs name="list" width="35" height="35" (click)="toggleMenu()"> </i-bs>
+  </li>
+  <li
+    class="col-s-12 navbar-item"
+    [ngClass]="{
+      'navbar-hide': menuOpen
+    }"
+    *ngFor="let item of navbarData"
+  >
     <!-- if the item dropdown -->
     <div
       *ngIf="item.type === 'dropdown'"
