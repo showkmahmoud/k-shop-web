@@ -11,6 +11,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CoreModule } from '../core/core.module';
 import { SwiperModule } from 'swiper/angular';
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
+import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,12 @@ import { HomeSliderComponent } from './components/home-slider/home-slider.compon
     WishlistComponent,
     HomeSliderComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule, CoreModule, SwiperModule],
+  imports: [
+    CommonModule,
+    PagesRoutingModule,
+    CoreModule,
+    SwiperModule,
+    NgxBootstrapIconsModule.pick(allIcons),
+  ],
 })
 export class PagesModule {}

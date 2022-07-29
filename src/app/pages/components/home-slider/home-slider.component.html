@@ -1,5 +1,8 @@
 <div class="slider-content row">
-  <button (click)="slidePrev()"><</button>
+  <div class="slider-btn" (click)="slidePrev()">
+    <i-bs class="right-arrow" name="arrow-right-short" width="45" height="45">
+    </i-bs>
+  </div>
   <swiper
     #swiper
     [slidesPerView]="3"
@@ -27,5 +30,8 @@
       </div>
     </ng-template>
   </swiper>
-  <button (click)="slideNext()">></button>
+  <div class="slider-btn" (click)="slideNext()">
+    <i-bs class="left-arrow" name="arrow-left-short" width="45" height="45">
+    </i-bs>
+  </div>
 </div>

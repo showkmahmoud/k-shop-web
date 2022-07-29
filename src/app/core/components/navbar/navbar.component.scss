@@ -1,6 +1,17 @@
 .nav {
   background-color: var(--input-bg);
   padding: 0 25px;
+  position: relative;
+}
+.nav::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  height: 49px;
+  width: 3px;
+  background: var(--main-bg);
 }
 li {
   padding: 0;
