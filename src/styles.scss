@@ -13,7 +13,9 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-
+i-bs {
+  cursor: pointer;
+}
 span,
 a,
 img {
@@ -24,7 +26,7 @@ a:focus {
 }
 .container {
   padding-top: 15px;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 .row {
@@ -71,6 +73,7 @@ input:focus {
   align-items: center;
   white-space: nowrap;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 .btn:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -86,6 +89,9 @@ input:focus {
   background: var(--main-color);
   color: var(--main-bg);
 }
+.col-lg-2 {
+  width: 16%;
+}
 .col-lg-3 {
   width: 24%;
   margin: 0 auto 30px;
@@ -97,6 +103,12 @@ input:focus {
 .col-lg-8 {
   width: 65%;
 }
+.col-lg-9 {
+  width: 74%;
+}
+.col-lg-10 {
+  width: 82%;
+}
 @media (max-width: 74.9375em) {
   .col-m-7 {
     width: 60%;
@@ -107,8 +119,11 @@ input:focus {
     width: 49%;
     margin-bottom: 30px;
   }
+  .col-m-12 {
+    width: 100%;
+  }
 }
-@media (max-width: 74.9375em) {
+@media (max-width: 47.9375em) {
   .col-s-12 {
     width: 100%;
     margin: 0 auto 30px;

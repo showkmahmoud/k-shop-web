@@ -1,8 +1,25 @@
 <div class="row">
-  <ng-container *ngFor="let product of products ? products : productsData">
+  <ng-container
+    *ngFor="
+      let product of productLimit
+        ? (productsData | slice: 0:productLimit)
+        : (productsData | slice: 0:4)
+    "
+  >
     <div class="product col-s-12 col-m-6 col-lg-3">
       <figure>
         <img class="product-img" [src]="product.image" alt="" />
+        <div class="row display-actions">
+          <i-bs
+            name="arrow-left-right"
+            class="compare-icon"
+            width="15"
+            height="15"
+          >
+          </i-bs>
+          <div class="btn new-btn" *ngIf="product.new">جديد</div>
+          <div class="btn display-btn" *ngIf="!product.new">عرض</div>
+        </div>
       </figure>
       <div class="product-info">
         <p class="title">{{ product.title }}</p>
@@ -26,6 +43,15 @@
             product.sale | currency: product.currency
           }}</span>
         </p>
+        <div class="row product-actions">
+          <div class="btn btn-wrapper">
+            <i-bs class="cart-icon" name="cart-plus"> </i-bs>
+            <span> اضف للسلة </span>
+          </div>
+          <i-bs class="share-icon" width="15" height="15" name="share-fill">
+          </i-bs>
+          <i-bs class="heart-icon" width="15" height="15" name="heart"></i-bs>
+        </div>
       </div>
     </div>
   </ng-container>

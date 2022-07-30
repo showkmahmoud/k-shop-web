@@ -3,9 +3,77 @@
 </div>
 <div class="page-wrapper">
   <div class="container row">
-    <div class="right-side col-s-12 col-m-6 col-lg-4"></div>
-    <div class="left-side col-s-12 col-m-6 col-lg-8">
-      <app-products></app-products>
+    <div class="right-side col-s-12 col-m-12 col-lg-3">
+      <!-- right-side-header -->
+      <h3>منتجات تصفحتها مؤخرا</h3>
+      <!-- ptoducts  -->
+      <ng-container *ngFor="let product of productsData">
+        <div class="product row col-s-12">
+          <figure class="img-display-wrapper">
+            <img class="product-img" [src]="product.image" alt="" />
+            <div class="row display-actions">
+              <i-bs
+                name="arrow-left-right"
+                class="compare-icon"
+                width="15"
+                height="15"
+              >
+              </i-bs>
+              <div class="btn new-btn" *ngIf="product.new">جديد</div>
+              <div class="btn display-btn" *ngIf="!product.new">عرض</div>
+            </div>
+          </figure>
+          <div class="product-info">
+            <p class="title">{{ product.title }}</p>
+            <div class="tui-row">
+              <i-bs
+                *ngFor="let rate of rateValue(product.rate); let index = index"
+                class="yellow-star-icon"
+                name="star-fill"
+              ></i-bs>
+              <i-bs
+                *ngFor="
+                  let rate of rateValue(5 - product.rate);
+                  let index = index
+                "
+                class="grey-star-icon"
+                name="star-fill"
+              ></i-bs>
+            </div>
+            <p class="price-wrapper">
+              <span [ngClass]="{ sale: product.sale, price: !product.sale }">
+                {{ product.price | currency: product.currency }}</span
+              >
+              <span class="price">{{
+                product.sale | currency: product.currency
+              }}</span>
+            </p>
+            <div class="row product-actions">
+              <div class="cart-wrapper">
+                <i-bs class="cart-icon" width="20" height="20" name="cart-plus">
+                </i-bs>
+              </div>
+              <i-bs class="share-icon" width="15" height="15" name="share-fill">
+              </i-bs>
+              <i-bs
+                class="heart-icon"
+                width="15"
+                height="15"
+                name="heart"
+              ></i-bs>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="left-side col-s-12 col-m-12 col-lg-9">
+      <!-- left-side-header -->
+      <div class="left-side-header row">
+        <h3>وصل حديثا</h3>
+        <div class="btn" (click)="displayMore()">عرض الكل</div>
+      </div>
+      <!-- ptoducts  -->
+      <app-products [productLimit]="productLength"></app-products>
     </div>
   </div>
 </div>

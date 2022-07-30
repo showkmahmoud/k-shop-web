@@ -1,3 +1,106 @@
 .page-wrapper {
   background: var(--layout-bg);
+  position: relative;
+  z-index: 11;
+}
+.row {
+  justify-content: space-between;
+}
+h3 {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-18) /
+    var(--unnamed-line-spacing-33) var(--unnamed-font-family-cairo);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(----new-btn-bg);
+}
+.product {
+  background: var(--main-bg);
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  flex-wrap: nowrap;
+  margin-bottom: 20px;
+}
+.img-display-wrapper {
+  position: relative;
+}
+.product-img {
+  width: 150px;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+}
+.display-actions {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  right: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+.new-btn,
+.display-btn {
+  color: var(--main-bg);
+  padding: 0px 15px 5px;
+  border-radius: 30px;
+}
+.new-btn {
+  background: var(--primary-btn-bg);
+}
+.display-btn {
+  background: var(--sec-btn-bg);
+}
+.compare-icon {
+  color: var(--primary-btn-bg);
+}
+.product-info {
+  padding: 16px;
+}
+.title {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-18) /
+    var(--unnamed-line-spacing-33) var(--unnamed-font-family-cairo);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: #032326;
+}
+.yellow-star-icon {
+  color: var(--star-icons);
+}
+.grey-star-icon {
+  color: var(--grey-stars);
+}
+.sale {
+  text-decoration: line-through;
+  color: var(--main-color);
+  opacity: 70%;
+}
+.price {
+  color: var(--price-color);
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold)
+    var(--unnamed-font-size-16) / var(--unnamed-line-spacing-30)
+    var(--unnamed-font-family-cairo);
+  display: block;
+}
+.product-actions {
+  flex-wrap: nowrap;
+  align-items: center;
+  left: 16px;
+  right: 16px;
+  bottom: 20px;
+}
+.cart-wrapper {
+  width: 80%;
+  margin-left: 10px;
+}
+
+.cart-icon {
+  margin: 5px 0 0 10px;
+  color: var(--main-color);
+  display: block;
+}
+.share-icon,
+.heart-icon {
+  margin: 0 5px;
+  color: var(--sec-bg);
 }

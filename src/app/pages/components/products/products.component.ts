@@ -9,11 +9,13 @@ import { Product } from 'src/app/shared/products.type';
 })
 export class ProductsComponent implements OnInit {
   @Input() products!: Product[];
-  productsData: Product[] = productsData;
+  @Input() productLimit!: number;
+
+  productsData!: Product[];
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.productsData);
+    this.productsData = this.products ? this.products : productsData;
   }
   rateValue(starsNumber: number) {
     return new Array(starsNumber);
