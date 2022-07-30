@@ -7,7 +7,6 @@ export const navbarData: (NavbarItem | DropdwenNavItem)[] = [
     items: [
       {
         label: 'ازياء الرجال',
-
         type: 'item',
         category: CATEGORIES.menSection,
       },
