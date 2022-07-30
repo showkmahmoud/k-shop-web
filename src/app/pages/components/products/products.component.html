@@ -1,1 +1,12 @@
-<p>products works!</p>
+<div class="row">
+  <ng-container *ngFor="let product of products ? products : productsData">
+    <div class="product col-s-12 col-m-6 col-lg-3">
+      <figure>
+        <img class="product-img" [src]="product.image" alt="" />
+      </figure>
+      <div class="product-info">
+        <p class="title">{{ product.title }}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
