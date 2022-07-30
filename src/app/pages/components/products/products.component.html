@@ -6,6 +6,26 @@
       </figure>
       <div class="product-info">
         <p class="title">{{ product.title }}</p>
+        <div class="tui-row">
+          <i-bs
+            *ngFor="let rate of rateValue(product.rate); let index = index"
+            class="yellow-star-icon"
+            name="star-fill"
+          ></i-bs>
+          <i-bs
+            *ngFor="let rate of rateValue(5 - product.rate); let index = index"
+            class="grey-star-icon"
+            name="star-fill"
+          ></i-bs>
+        </div>
+        <p class="price-wrapper">
+          <span [ngClass]="{ sale: product.sale, price: !product.sale }">
+            {{ product.price | currency: product.currency }}</span
+          >
+          <span class="price">{{
+            product.sale | currency: product.currency
+          }}</span>
+        </p>
       </div>
     </div>
   </ng-container>
