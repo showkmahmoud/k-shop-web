@@ -5,9 +5,9 @@
   <div class="container row">
     <div class="right-side col-s-12 col-m-12 col-lg-3">
       <!-- right-side-header -->
-      <h3>منتجات تصفحتها مؤخرا</h3>
+      <p class="header">منتجات تصفحتها مؤخرا</p>
       <!-- ptoducts  -->
-      <ng-container *ngFor="let product of productsData">
+      <div class="products-wrapper" *ngFor="let product of productsData">
         <div class="product row col-s-12">
           <figure class="img-display-wrapper">
             <img class="product-img" [src]="product.image" alt="" />
@@ -64,16 +64,20 @@
             </div>
           </div>
         </div>
-      </ng-container>
+      </div>
     </div>
     <div class="left-side col-s-12 col-m-12 col-lg-9">
       <!-- left-side-header -->
       <div class="left-side-header row">
-        <h3>وصل حديثا</h3>
-        <div class="btn" (click)="displayMore()">عرض الكل</div>
+        <p class="header-left-side">وصل حديثا</p>
+        <div class="btn view-btn" (click)="displayMore()">
+          <span> عرض الكل </span>
+        </div>
       </div>
       <!-- ptoducts  -->
-      <app-products [productLimit]="productLength"></app-products>
+      <div class="products-wrapper">
+        <app-products [productLimit]="productLength"></app-products>
+      </div>
     </div>
   </div>
 </div>

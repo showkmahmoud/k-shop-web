@@ -6,11 +6,12 @@
 .row {
   justify-content: space-between;
 }
-h3 {
-  font: var(--unnamed-font-style-normal) normal
-    var(--unnamed-font-weight-normal) var(--unnamed-font-size-18) /
-    var(--unnamed-line-spacing-33) var(--unnamed-font-family-cairo);
-  letter-spacing: var(--unnamed-character-spacing-0);
+.products-wrapper {
+  margin-top: 30px;
+}
+.header,
+.header-left-side {
+  font: normal normal normal 24px/45px Cairo;
   color: var(----new-btn-bg);
 }
 .product {
@@ -103,4 +104,26 @@ h3 {
 .heart-icon {
   margin: 0 5px;
   color: var(--sec-bg);
+}
+.view-btn {
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  padding: 0 20px;
+  height: 40px;
+  width: 11%;
+  font: normal normal bold 16px/24px Cairo;
+  position: relative;
+}
+.view-btn::before {
+  content: "";
+  height: 1px;
+  width: 958px;
+  position: absolute;
+  left: 118%;
+  bottom: 18px;
+  display: block;
+  background: var(--sec-bg);
+}
+.left-side-header {
+  align-items: center;
 }
