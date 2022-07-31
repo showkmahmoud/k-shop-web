@@ -127,3 +127,13 @@
 .left-side-header {
   align-items: center;
 }
+@media (max-width: 74.9375em) {
+  .view-btn::before {
+    display: none;
+  }
+}
+@media (max-width: 47.9375em) {
+  .view-btn::before {
+    display: none;
+  }
+}

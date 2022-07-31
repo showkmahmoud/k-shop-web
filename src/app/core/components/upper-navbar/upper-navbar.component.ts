@@ -19,8 +19,9 @@ export class UpperNavbarComponent implements OnInit {
       search: '',
     });
   }
-  onSubmit(form: FormGroup) {
-    console.log(form);
+  onSubmit(form: any) {
+    console.log(form.search);
+    this.menuOpen = false;
   }
   toggleMenu() {
     this.menuOpen = !this.menuOpen;

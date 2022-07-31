@@ -28,7 +28,9 @@
       <!-- dropdown list -->
       <ul class="dropdown-list" *ngIf="dropDownOpen">
         <li class="dropdown-item" *ngFor="let li of item.items">
-          <a [routerLink]="['categories/' + li.category]">{{ li.label }}</a>
+          <a [routerLink]="['categories/' + li.category]" (click)="onClose()">{{
+            li.label
+          }}</a>
         </li>
       </ul>
     </div>
@@ -37,7 +39,7 @@
       <a
         [routerLink]="item.link"
         routerLinkActive="active"
-        (click)="dropDownOpen = false"
+        (click)="onClose()"
         [ngClass]="{ 'in-active': dropDownOpen }"
         >{{ item.label }}</a
       >
