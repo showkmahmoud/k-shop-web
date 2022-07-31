@@ -110,14 +110,14 @@
   color: var(--main-color);
   padding: 0 20px;
   height: 40px;
-  width: 11%;
+  width: 150px;
   font: normal normal bold 16px/24px Cairo;
   position: relative;
 }
 .view-btn::before {
   content: "";
   height: 1px;
-  width: 958px;
+  width: 699%;
   position: absolute;
   left: 118%;
   bottom: 18px;
