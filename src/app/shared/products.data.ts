@@ -5,7 +5,7 @@ export const productsData: Product[] = [
   {
     image: 'assets/item5.png',
     title: 'تيشيرت-كم طويل-آرت وير-نسائي',
-    category: CATEGORIES.menSection,
+    category: CATEGORIES.womensSection,
     rate: 1,
     sale: 90,
     price: 150,
@@ -36,7 +36,7 @@ export const productsData: Product[] = [
   {
     image: 'assets/item2.png',
     title: 'تيشيرت-كم طويل-آرت وير-نسائي',
-    category: CATEGORIES.menSection,
+    category: CATEGORIES.mobilesSection,
     rate: 5,
     price: 90,
     currency: 'ج.م',
@@ -46,7 +46,7 @@ export const productsData: Product[] = [
   {
     image: 'assets/item6.png',
     title: 'تيشيرت-كم طويل-آرت وير-نسائي',
-    category: CATEGORIES.menSection,
+    category: CATEGORIES.womensSection,
     rate: 1,
     sale: 100,
     price: 140,
@@ -57,7 +57,7 @@ export const productsData: Product[] = [
   {
     image: 'assets/item4.png',
     title: 'تيشيرت-كم طويل-آرت وير-نسائي',
-    category: CATEGORIES.menSection,
+    category: CATEGORIES.accessoriesSection,
     rate: 4,
     price: 150,
     currency: 'ج.م',
@@ -67,7 +67,7 @@ export const productsData: Product[] = [
   {
     image: 'assets/item7.png',
     title: 'تيشيرت-كم طويل-آرت وير-نسائي',
-    category: CATEGORIES.menSection,
+    category: CATEGORIES.womensSection,
     rate: 3,
     sale: 90,
     price: 150,

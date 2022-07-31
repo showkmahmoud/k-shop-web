@@ -13,7 +13,7 @@ import { SwiperModule } from 'swiper/angular';
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 import { ProductsComponent } from './components/products/products.component';
-import { CategoriesLandingComponent } from './components/categories-landing/categories-landing.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { CategoriesLandingComponent } from './components/categories-landing/cate
     WishlistComponent,
     HomeSliderComponent,
     ProductsComponent,
-    CategoriesLandingComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,
