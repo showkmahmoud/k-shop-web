@@ -4,7 +4,7 @@ import { Product, PRODUCT_TYPE } from './products.type';
 export const productsData: Product[] = [
   {
     image: 'assets/item5.png',
-    title: 'تيشيرت-كم طويل-آرت وير-نسائي',
+    title: 'بلوزة كم طويل-آرت وير-نسائي ',
     category: CATEGORIES.womensSection,
     rate: 1,
     sale: 90,
@@ -15,7 +15,7 @@ export const productsData: Product[] = [
   },
   {
     image: 'assets/item3.png',
-    title: 'تيشيرت-كم طويل-آرت وير-نسائي',
+    title: 'تيشرت اسود رجالى',
     category: CATEGORIES.menSection,
     rate: 2,
     price: 90,
@@ -25,7 +25,7 @@ export const productsData: Product[] = [
   },
   {
     image: 'assets/item1.png',
-    title: 'تيشيرت-كم طويل-آرت وير-نسائي',
+    title: 'موبايل ريدمى 9 برو',
     category: CATEGORIES.mobilesSection,
     rate: 4,
     price: 90,
@@ -35,7 +35,7 @@ export const productsData: Product[] = [
   },
   {
     image: 'assets/item2.png',
-    title: 'تيشيرت-كم طويل-آرت وير-نسائي',
+    title: 'موبايل ريدمى 11 برو',
     category: CATEGORIES.mobilesSection,
     rate: 5,
     price: 90,
@@ -45,7 +45,7 @@ export const productsData: Product[] = [
   },
   {
     image: 'assets/item6.png',
-    title: 'تيشيرت-كم طويل-آرت وير-نسائي',
+    title: 'بلوزة-كم طويل بينك-آرت وير-نسائي',
     category: CATEGORIES.womensSection,
     rate: 1,
     sale: 100,
@@ -56,7 +56,7 @@ export const productsData: Product[] = [
   },
   {
     image: 'assets/item4.png',
-    title: 'تيشيرت-كم طويل-آرت وير-نسائي',
+    title: 'عقد للزينة',
     category: CATEGORIES.accessoriesSection,
     rate: 4,
     price: 150,
@@ -66,7 +66,7 @@ export const productsData: Product[] = [
   },
   {
     image: 'assets/item7.png',
-    title: 'تيشيرت-كم طويل-آرت وير-نسائي',
+    title: 'تيشرت نص كم ارت وير نسائى',
     category: CATEGORIES.womensSection,
     rate: 3,
     sale: 90,

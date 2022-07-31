@@ -1,4 +1,4 @@
-<div class="row">
+<div *ngIf="!noData" class="row">
   <ng-container
     *ngFor="
       let product of productLimit
@@ -56,3 +56,4 @@
     </div>
   </ng-container>
 </div>
+<h3 *ngIf="noData" class="not-found">لا يوجد عناصر</h3>

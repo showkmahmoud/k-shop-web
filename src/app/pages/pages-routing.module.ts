@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'search/:value',
-        component: SearchComponent,
+        component: ProductsComponent,
       },
     ],
   },

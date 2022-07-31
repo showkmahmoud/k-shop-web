@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { navbarData } from 'src/app/shared/navbar.data';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -12,7 +13,7 @@ export class UpperNavbarComponent implements OnInit {
   navbar: (NavbarItem | DropdwenNavItem)[] = navbarData;
   form!: FormGroup;
   menuOpen: boolean = true;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -21,7 +22,8 @@ export class UpperNavbarComponent implements OnInit {
   }
   onSubmit(form: any) {
     console.log(form.search);
-    this.menuOpen = false;
+    this.router.navigate([`/k-shop/search/${form.search}`]);
+    this.menuOpen = true;
   }
   toggleMenu() {
     this.menuOpen = !this.menuOpen;

@@ -6,5 +6,15 @@
   z-index: 1111;
 }
 .page-content {
-  margin-top: 109px;
+  margin-top: 149px;
+}
+@media (max-width: 74.9375em) {
+  .page-content {
+    margin-top: 109px;
+  }
+}
+@media (max-width: 47.9375em) {
+  .page-content {
+    margin-top: 109px;
+  }
 }
