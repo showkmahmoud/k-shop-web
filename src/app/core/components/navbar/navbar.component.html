@@ -3,8 +3,16 @@
 <ul class="nav row">
   <!-- toggle button -->
   <li class="navbar-toggle">
-    <span class="wish-list">{{ whishListLength }}</span>
-    <i-bs name="list" width="35" height="35" (click)="toggleMenu()"> </i-bs>
+    <i-bs class="wish-list" name="heart-fill" width="30" height="30"> </i-bs>
+    <span class="wish-list-no">{{ whishListLength }}</span>
+    <i-bs
+      class="list-icon"
+      name="list"
+      width="35"
+      height="35"
+      (click)="toggleMenu()"
+    >
+    </i-bs>
   </li>
   <li
     class="col-s-12 navbar-item"

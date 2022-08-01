@@ -67,11 +67,10 @@ a.active {
 .navbar-toggle {
   display: none;
 }
-.navbar-toggle i-bs {
+.navbar-toggle .list-icon {
   color: var(--main-color);
 }
 // wish-list
-.wish-list,
 .wish-list-item {
   background: var(--main-color);
   color: var(--main-bg);
@@ -95,10 +94,19 @@ a.active {
   .wish-list {
     position: absolute;
     bottom: 1px;
-    right: -22px;
+    right: -39px;
     z-index: 1;
-    background: var(--main-bg);
     color: var(--main-color);
+  }
+  .wish-list-no {
+    color: var(--main-bg);
+    right: -28px;
+    bottom: 12px;
+    position: absolute;
+    z-index: 1;
+  }
+  .wish-list-item {
+    display: none;
   }
   .navbar-item {
     width: 100%;
@@ -120,10 +128,19 @@ a.active {
   .wish-list {
     position: absolute;
     bottom: 1px;
-    right: -22px;
+    right: -39px;
     z-index: 1;
-    background: var(--main-bg);
     color: var(--main-color);
+  }
+  .wish-list-no {
+    color: var(--main-bg);
+    right: -28px;
+    bottom: 12px;
+    position: absolute;
+    z-index: 1;
+  }
+  .wish-list-item {
+    display: none;
   }
   .navbar-item {
     width: 100%;
