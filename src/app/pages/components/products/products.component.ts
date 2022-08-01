@@ -14,9 +14,13 @@ export class ProductsComponent implements OnInit {
   url!: string;
   productsData!: Product[];
   noData: boolean = false;
+  whishedProduct: any = false;
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.filterProduct();
+  }
+  filterProduct() {
     if (this.router.url.includes('categories')) {
       this.url = 'categories';
       this.activatedRoute.queryParams.subscribe((params: any) => {
@@ -46,5 +50,9 @@ export class ProductsComponent implements OnInit {
   }
   rateValue(starsNumber: number) {
     return new Array(starsNumber);
+  }
+  addedToWhishList(index: number) {
+    this.productsData[index].wishedProduct =
+      !this.productsData[index].wishedProduct;
   }
 }

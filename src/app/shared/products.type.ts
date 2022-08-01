@@ -12,4 +12,5 @@ export type Product = {
   sale?: number;
   new: boolean;
   type: PRODUCT_TYPE;
+  wishedProduct: boolean;
 };

@@ -8,10 +8,12 @@
       *ngFor="
         let product of productLimit
           ? (productsData | slice: 0:productLimit)
-          : (productsData | slice: 0:4)
+          : (productsData | slice: 0:4);
+        let productIndex = index
       "
     >
       <div class="product col-s-12 col-m-6 col-lg-3">
+        <!-- product image -->
         <figure>
           <img class="product-img" [src]="product.image" alt="" />
           <div class="row display-actions">
@@ -26,8 +28,10 @@
             <div class="btn display-btn" *ngIf="!product.new">عرض</div>
           </div>
         </figure>
+        <!-- product info -->
         <div class="product-info">
           <p class="title">{{ product.title }}</p>
+          <!-- product rate -->
           <div class="tui-row">
             <i-bs
               *ngFor="let rate of rateValue(product.rate); let index = index"
@@ -43,6 +47,7 @@
               name="star-fill"
             ></i-bs>
           </div>
+          <!-- product price & sale -->
           <p class="price-wrapper">
             <span [ngClass]="{ sale: product.sale, price: !product.sale }">
               {{ product.price | currency: product.currency }}</span
@@ -51,6 +56,7 @@
               product.sale | currency: product.currency
             }}</span>
           </p>
+          <!-- product actions -->
           <div class="row product-actions">
             <div class="btn btn-wrapper">
               <i-bs class="cart-icon" name="cart-plus"> </i-bs>
@@ -58,7 +64,18 @@
             </div>
             <i-bs class="share-icon" width="15" height="15" name="share-fill">
             </i-bs>
-            <i-bs class="heart-icon" width="15" height="15" name="heart"></i-bs>
+            <i-bs
+              class="heart-icon"
+              width="15"
+              height="15"
+              [ngClass]="
+                product.wishedProduct === true
+                  ? 'heart-fill-icon'
+                  : 'heart-icon'
+              "
+              [name]="product.wishedProduct === true ? 'heart-fill' : 'heart'"
+              (click)="addedToWhishList(productIndex)"
+            ></i-bs>
           </div>
         </div>
       </div>

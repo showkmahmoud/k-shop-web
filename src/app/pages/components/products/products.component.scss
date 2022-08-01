@@ -95,7 +95,11 @@
   margin: 0 0 0 10px;
 }
 .share-icon,
-.heart-icon {
+.heart-icon,
+.heart-fill-icon {
   margin: 0 5px;
   color: var(--sec-bg);
+}
+.heart-fill-icon {
+  color: var(--main-color);
 }

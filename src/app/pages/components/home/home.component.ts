@@ -28,4 +28,8 @@ export class HomeComponent implements OnInit {
       this.productLength = 4;
     }
   }
+  addedToWhishList(index: number) {
+    this.productsData[index].wishedProduct =
+      !this.productsData[index].wishedProduct;
+  }
 }
