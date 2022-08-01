@@ -3,6 +3,7 @@ export enum PRODUCT_TYPE {
   recentlyViewed = 'recently viewed',
 }
 export type Product = {
+  id: number;
   image: string;
   title: string;
   category: string;

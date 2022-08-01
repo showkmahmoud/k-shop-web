@@ -101,10 +101,15 @@
   display: block;
 }
 .share-icon,
-.heart-icon {
+.heart-icon,
+.heart-fill-icon {
   margin: 0 5px;
   color: var(--sec-bg);
 }
+.heart-fill-icon {
+  color: var(--main-color);
+}
+
 .view-btn {
   border: 1px solid var(--main-color);
   color: var(--main-color);

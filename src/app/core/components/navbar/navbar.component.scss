@@ -70,7 +70,17 @@ a.active {
 .navbar-toggle i-bs {
   color: var(--main-color);
 }
-
+// wish-list
+.wish-list {
+  background: var(--main-color);
+  color: var(--main-bg);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
 @media (max-width: 74.9375em) {
   .nav {
     padding: 5px 12px 0;

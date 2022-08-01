@@ -7,7 +7,10 @@
       <!-- right-side-header -->
       <p class="header">منتجات تصفحتها مؤخرا</p>
       <!-- ptoducts  -->
-      <div class="products-wrapper" *ngFor="let product of productsData">
+      <div
+        class="products-wrapper"
+        *ngFor="let product of products; let productIndex = index"
+      >
         <div class="product row col-s-12">
           <figure class="img-display-wrapper">
             <img class="product-img" [src]="product.image" alt="" />
@@ -59,7 +62,13 @@
                 class="heart-icon"
                 width="15"
                 height="15"
-                name="heart"
+                [ngClass]="
+                  product.wishedProduct === true
+                    ? 'heart-fill-icon'
+                    : 'heart-icon'
+                "
+                [name]="product.wishedProduct === true ? 'heart-fill' : 'heart'"
+                (click)="addedToWhishList(product.id)"
               ></i-bs>
             </div>
           </div>
@@ -72,7 +81,7 @@
         <p class="header-left-side">وصل حديثا</p>
         <div class="btn view-btn" (click)="displayMore()">
           <span>
-            {{ productLength != products.length ? "عرض الكل" : "عرض اقل" }}
+            {{ productLength != productsData.length ? "عرض الكل" : "عرض اقل" }}
           </span>
         </div>
       </div>

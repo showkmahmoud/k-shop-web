@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { productsData } from 'src/app/shared/products.data';
 import { Product, PRODUCT_TYPE } from 'src/app/shared/products.type';
+import { AddToWhishListService } from 'src/app/shared/services/add-to-whish-list.service';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,12 @@ import { Product, PRODUCT_TYPE } from 'src/app/shared/products.type';
 })
 export class HomeComponent implements OnInit {
   productLength!: number;
-  productsData!: Product[];
-  products: Product[] = productsData;
-  constructor() {}
+  productsData = productsData;
+  products!: Product[];
+  constructor(private wishListService: AddToWhishListService) {}
 
   ngOnInit(): void {
-    this.productsData = productsData.filter(
+    this.products = productsData.filter(
       (item) => item.type === PRODUCT_TYPE.recentlyViewed
     );
   }
@@ -22,14 +23,24 @@ export class HomeComponent implements OnInit {
     return new Array(starsNumber);
   }
   displayMore() {
-    if (this.productLength != this.products.length) {
-      this.productLength = this.products.length;
+    if (this.productLength != this.productsData.length) {
+      this.productLength = this.productsData.length;
     } else {
       this.productLength = 4;
     }
   }
-  addedToWhishList(index: number) {
-    this.productsData[index].wishedProduct =
-      !this.productsData[index].wishedProduct;
+  addedToWhishList(id: number) {
+    let counter = 0;
+    this.productsData.map((product) => {
+      if (product.id === id) {
+        product.wishedProduct = !product.wishedProduct;
+        this.wishListService.wishedProductsLength.subscribe((data: any) => {
+          counter = data;
+        });
+        this.wishListService.addWishedProduct(
+          product.wishedProduct == true ? counter + 1 : counter - 1
+        );
+      }
+    });
   }
 }

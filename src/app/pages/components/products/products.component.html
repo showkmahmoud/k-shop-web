@@ -74,7 +74,7 @@
                   : 'heart-icon'
               "
               [name]="product.wishedProduct === true ? 'heart-fill' : 'heart'"
-              (click)="addedToWhishList(productIndex)"
+              (click)="addedToWhishList(product.id)"
             ></i-bs>
           </div>
         </div>

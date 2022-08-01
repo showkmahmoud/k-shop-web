@@ -5,8 +5,6 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { HomeComponent } from './components/home/home.component';
 import { LandingLayoutComponent } from './components/landing-layout/landing-layout.component';
 import { ProductsComponent } from './components/products/products.component';
-import { SearchComponent } from './components/search/search.component';
-import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,7 +14,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'wishlist', component: WishlistComponent },
+      { path: 'wishlist', component: ProductsComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
       {

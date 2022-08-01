@@ -3,6 +3,7 @@ import { Product, PRODUCT_TYPE } from './products.type';
 
 export const productsData: Product[] = [
   {
+    id: 1,
     image: 'assets/item5.png',
     title: 'بلوزة كم طويل-آرت وير-نسائي ',
     category: CATEGORIES.womensSection,
@@ -15,6 +16,7 @@ export const productsData: Product[] = [
     type: PRODUCT_TYPE.new,
   },
   {
+    id: 2,
     image: 'assets/item3.png',
     title: 'تيشرت اسود رجالى',
     category: CATEGORIES.menSection,
@@ -26,6 +28,7 @@ export const productsData: Product[] = [
     type: PRODUCT_TYPE.new,
   },
   {
+    id: 3,
     image: 'assets/item1.png',
     title: 'موبايل ريدمى 9 برو',
     category: CATEGORIES.mobilesSection,
@@ -37,6 +40,7 @@ export const productsData: Product[] = [
     type: PRODUCT_TYPE.new,
   },
   {
+    id: 4,
     image: 'assets/item2.png',
     title: 'موبايل ريدمى 11 برو',
     category: CATEGORIES.mobilesSection,
@@ -48,6 +52,7 @@ export const productsData: Product[] = [
     type: PRODUCT_TYPE.new,
   },
   {
+    id: 5,
     image: 'assets/item6.png',
     title: 'بلوزة-كم طويل بينك-آرت وير-نسائي',
     category: CATEGORIES.womensSection,
@@ -60,6 +65,7 @@ export const productsData: Product[] = [
     type: PRODUCT_TYPE.recentlyViewed,
   },
   {
+    id: 6,
     image: 'assets/item4.png',
     title: 'عقد للزينة',
     category: CATEGORIES.accessoriesSection,
@@ -71,6 +77,7 @@ export const productsData: Product[] = [
     type: PRODUCT_TYPE.recentlyViewed,
   },
   {
+    id: 7,
     image: 'assets/item7.png',
     title: 'تيشرت نص كم ارت وير نسائى',
     category: CATEGORIES.womensSection,

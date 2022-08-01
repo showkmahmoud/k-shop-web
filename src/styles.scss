@@ -16,6 +16,9 @@ body {
 i-bs {
   cursor: pointer;
 }
+i-bs:hover {
+  box-shadow: rgba(162, 14, 14, 0.2) 0px 7px 29px 0px;
+}
 span,
 a,
 img {

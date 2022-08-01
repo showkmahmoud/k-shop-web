@@ -44,8 +44,11 @@
         routerLinkActive="active"
         (click)="onClose()"
         [ngClass]="{ 'in-active': dropDownOpen }"
-        >{{ item.label }}</a
-      >
+        >{{ item.label }}
+        <span class="wish-list" *ngIf="item.label === 'قائمة الامنيات'">{{
+          whishListLength
+        }}</span>
+      </a>
     </div>
   </li>
 </ul>

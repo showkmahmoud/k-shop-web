@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { navbarData } from 'src/app/shared/navbar.data';
 import { DropdwenNavItem, NavbarItem } from 'src/app/shared/navbar.type';
+import { AddToWhishListService } from 'src/app/shared/services/add-to-whish-list.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,10 +15,17 @@ export class NavbarComponent implements OnInit {
   navbarData: (NavbarItem | DropdwenNavItem)[] = navbarData;
   dropDownOpen: boolean = false;
   menuOpen: boolean = true;
+  whishListLength: number = 0;
+  constructor(
+    private _eref: ElementRef,
+    private wishListService: AddToWhishListService
+  ) {}
 
-  constructor(private _eref: ElementRef) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.wishListService.wishedProductsLength.subscribe((data: any) => {
+      this.whishListLength = data;
+    });
+  }
   toggle() {
     this.dropDownOpen = !this.dropDownOpen;
   }
