@@ -18,6 +18,7 @@
       (click)="toggleMenu()"
     >
     </i-bs>
+    <span class="cart-items">{{ cartItems }}</span>
   </li>
   <!-- search input -->
   <li
@@ -61,10 +62,10 @@
       'navbar-hide': menuOpen
     }"
   >
-    <div class="cart-wrapper btn primary-btn">
+    <a class="cart-wrapper btn primary-btn" [routerLink]="['/k-shop/cart']">
       <p>سلة التسوق</p>
       <i-bs class="user-icon" name="cart-fill" width="20" height="20"> </i-bs>
       <span class="cart-items">{{ cartItems }}</span>
-    </div>
+    </a>
   </li>
 </ul>

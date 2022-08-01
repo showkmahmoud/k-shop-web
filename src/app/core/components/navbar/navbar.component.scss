@@ -89,6 +89,15 @@ a.active {
     display: inline-flex;
     margin-right: auto;
     cursor: pointer;
+    position: relative;
+  }
+  .wish-list {
+    position: absolute;
+    bottom: 1px;
+    right: -22px;
+    z-index: 1;
+    background: var(--main-bg);
+    color: var(--main-color);
   }
   .navbar-item {
     width: 100%;
@@ -105,6 +114,15 @@ a.active {
     display: inline-flex;
     margin-right: auto;
     cursor: pointer;
+    position: relative;
+  }
+  .wish-list {
+    position: absolute;
+    bottom: 1px;
+    right: -22px;
+    z-index: 1;
+    background: var(--main-bg);
+    color: var(--main-color);
   }
   .navbar-item {
     width: 100%;

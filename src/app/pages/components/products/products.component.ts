@@ -101,6 +101,9 @@ export class ProductsComponent implements OnInit {
     this.productsData.map((product) => {
       if (product.id === id) {
         product.quantity = product.quantity + 1;
+        this.cartService.cartItems.subscribe((data: any) => {
+          cartItems = data;
+        });
         cartItems.push(product);
         this.cartService.addToCartItems(cartItems);
         this.cartService.cartProductsLength.subscribe((data: any) => {
