@@ -1,2 +1,25 @@
-<p>cart-products works!</p>
-<pre>{{ cartProducts | json }}</pre>
+<div class="cart-wrapper">
+  <div class="container">
+    <h2>قائمة المشتريات</h2>
+    <table>
+      <thead>
+        <!-- Table columns will be :   -->
+        <tr>
+          <th>اسم المنتج</th>
+          <th>القسم</th>
+          <th>السعر</th>
+          <th>الكمية</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of cartProducts">
+          <td>{{ product.title }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

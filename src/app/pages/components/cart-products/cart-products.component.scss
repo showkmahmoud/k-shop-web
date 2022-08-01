@@ -1,0 +1,29 @@
+.cart-wrapper {
+  background: var(--layout-bg);
+  height: 100vh;
+}
+h2 {
+  font: normal normal normal 24px/45px Cairo;
+  color: var(----new-btn-bg);
+}
+table {
+  overflow: scroll;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+th {
+  width: 25%;
+  padding-bottom: 15px;
+  color: var(--main-color);
+}
+tr {
+  width: 100%;
+  border-bottom: 2px solid var(--main-bg);
+}
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: var(--price-color);
+}
