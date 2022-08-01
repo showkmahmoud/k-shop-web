@@ -47,22 +47,26 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-  addToCart(id: number) {
+  addToCart(product: Product) {
     let cartCounter = 0;
     let cartItems: Product[] = [];
-    this.productsData.map((product) => {
-      if (product.id === id) {
-        product.quantity = product.quantity + 1;
-        this.cartService.cartItems.subscribe((data: any) => {
-          cartItems = data;
-        });
-        cartItems.push(product);
-        this.cartService.addToCartItems(cartItems);
-        this.cartService.cartProductsLength.subscribe((data: any) => {
-          cartCounter = data;
-        });
-        this.cartService.addCartProducts(cartCounter + 1);
-      }
+    //increasing the counter
+    this.cartService.cartProductsLength.subscribe((data: any) => {
+      cartCounter = data;
     });
+    this.cartService.addCartProducts(cartCounter + 1);
+    //adding the product to the cart
+    this.cartService.cartItems.subscribe((data: any) => {
+      cartItems = data;
+    });
+    const item = cartItems.find((i) => i.id === product.id);
+    if (item) {
+      item.quantity += 1;
+    } else {
+      product.quantity += 1;
+      cartItems.push(product);
+    }
+    console.log(cartItems);
+    this.cartService.addToCartItems(cartItems);
   }
 }
