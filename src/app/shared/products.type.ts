@@ -10,6 +10,7 @@ export type Product = {
   rate: number;
   price: number;
   currency: string;
+  quantity: number;
   sale?: number;
   new: boolean;
   type: PRODUCT_TYPE;

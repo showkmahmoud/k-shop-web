@@ -67,7 +67,18 @@ li {
 .navbar-toggle {
   display: none;
 }
-
+// cart-items
+.cart-items {
+  background: var(--main-color);
+  color: var(--main-bg);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 26px;
+  text-align: center;
+  margin-right: 10px;
+}
 @media (max-width: 74.9375em) {
   ul {
     flex-wrap: wrap;

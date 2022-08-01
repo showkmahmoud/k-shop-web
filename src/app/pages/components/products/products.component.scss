@@ -90,7 +90,9 @@
   padding: 5px 10px;
   margin-left: 10px;
 }
-
+.btn-wrapper:hover {
+  background: #474594;
+}
 .cart-icon {
   margin: 0 0 0 10px;
 }
@@ -99,6 +101,9 @@
 .heart-fill-icon {
   margin: 0 5px;
   color: var(--sec-bg);
+}
+.heart-icon:hover {
+  color: var(--main-color);
 }
 .heart-fill-icon {
   color: var(--main-color);

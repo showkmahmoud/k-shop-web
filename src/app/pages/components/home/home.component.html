@@ -52,7 +52,7 @@
               }}</span>
             </p>
             <div class="row product-actions">
-              <div class="cart-wrapper">
+              <div (click)="addToCart(product.id)" class="cart-wrapper">
                 <i-bs class="cart-icon" width="20" height="20" name="cart-plus">
                 </i-bs>
               </div>
@@ -68,7 +68,7 @@
                     : 'heart-icon'
                 "
                 [name]="product.wishedProduct === true ? 'heart-fill' : 'heart'"
-                (click)="addedToWhishList(product.id)"
+                (click)="addToWhishList(product.id)"
               ></i-bs>
             </div>
           </div>

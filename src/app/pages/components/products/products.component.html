@@ -58,7 +58,7 @@
           </p>
           <!-- product actions -->
           <div class="row product-actions">
-            <div class="btn btn-wrapper">
+            <div class="btn btn-wrapper" (click)="addToCart(product.id)">
               <i-bs class="cart-icon" name="cart-plus"> </i-bs>
               <span> اضف للسلة </span>
             </div>
@@ -74,7 +74,7 @@
                   : 'heart-icon'
               "
               [name]="product.wishedProduct === true ? 'heart-fill' : 'heart'"
-              (click)="addedToWhishList(product.id)"
+              (click)="addToWhishList(product.id)"
             ></i-bs>
           </div>
         </div>

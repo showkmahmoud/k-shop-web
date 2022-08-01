@@ -1,3 +1,4 @@
+import { AddToCartService } from './../../../shared/services/add-to-cart.service';
 import { Component, OnInit } from '@angular/core';
 import { productsData } from 'src/app/shared/products.data';
 import { Product, PRODUCT_TYPE } from 'src/app/shared/products.type';
@@ -12,7 +13,10 @@ export class HomeComponent implements OnInit {
   productLength!: number;
   productsData = productsData;
   products!: Product[];
-  constructor(private wishListService: AddToWhishListService) {}
+  constructor(
+    private wishListService: AddToWhishListService,
+    private cartService: AddToCartService
+  ) {}
 
   ngOnInit(): void {
     this.products = productsData.filter(
@@ -29,7 +33,7 @@ export class HomeComponent implements OnInit {
       this.productLength = 4;
     }
   }
-  addedToWhishList(id: number) {
+  addToWhishList(id: number) {
     let counter = 0;
     this.productsData.map((product) => {
       if (product.id === id) {
@@ -40,6 +44,21 @@ export class HomeComponent implements OnInit {
         this.wishListService.addWishedProduct(
           product.wishedProduct == true ? counter + 1 : counter - 1
         );
+      }
+    });
+  }
+  addToCart(id: number) {
+    let cartCounter = 0;
+    let cartItems: Product[] = [];
+    this.productsData.map((product) => {
+      if (product.id === id) {
+        product.quantity = product.quantity + 1;
+        cartItems.push(product);
+        this.cartService.addToCartItems(cartItems);
+        this.cartService.cartProductsLength.subscribe((data: any) => {
+          cartCounter = data;
+        });
+        this.cartService.addCartProducts(cartCounter + 1);
       }
     });
   }

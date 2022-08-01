@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { productsData } from 'src/app/shared/products.data';
 import { Product } from 'src/app/shared/products.type';
+import { AddToCartService } from 'src/app/shared/services/add-to-cart.service';
 import { AddToWhishListService } from 'src/app/shared/services/add-to-whish-list.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class ProductsComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private wishListService: AddToWhishListService
+    private wishListService: AddToWhishListService,
+    private cartService: AddToCartService
   ) {}
 
   ngOnInit(): void {
@@ -76,7 +78,7 @@ export class ProductsComponent implements OnInit {
   rateValue(starsNumber: number) {
     return new Array(starsNumber);
   }
-  addedToWhishList(id: number) {
+  addToWhishList(id: number) {
     let counter = 0;
     this.productsData.map((product) => {
       if (product.id === id) {
@@ -90,6 +92,21 @@ export class ProductsComponent implements OnInit {
         if (this.router.url.includes('wishlist')) {
           this.wishListFilter();
         }
+      }
+    });
+  }
+  addToCart(id: number) {
+    let cartCounter = 0;
+    let cartItems: Product[] = [];
+    this.productsData.map((product) => {
+      if (product.id === id) {
+        product.quantity = product.quantity + 1;
+        cartItems.push(product);
+        this.cartService.addToCartItems(cartItems);
+        this.cartService.cartProductsLength.subscribe((data: any) => {
+          cartCounter = data;
+        });
+        this.cartService.addCartProducts(cartCounter + 1);
       }
     });
   }

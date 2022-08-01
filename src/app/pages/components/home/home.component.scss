@@ -94,7 +94,9 @@
   width: 80%;
   margin-left: 10px;
 }
-
+.cart-icon:hover {
+  color: var(--primary-btn-bg);
+}
 .cart-icon {
   margin: 5px 0 0 10px;
   color: var(--main-color);
@@ -105,6 +107,9 @@
 .heart-fill-icon {
   margin: 0 5px;
   color: var(--sec-bg);
+}
+.heart-icon:hover {
+  color: var(--main-color);
 }
 .heart-fill-icon {
   color: var(--main-color);

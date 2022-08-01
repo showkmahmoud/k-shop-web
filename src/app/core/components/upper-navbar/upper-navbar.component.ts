@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { navbarData } from 'src/app/shared/navbar.data';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { DropdwenNavItem, NavbarItem } from 'src/app/shared/navbar.type';
+import { AddToCartService } from 'src/app/shared/services/add-to-cart.service';
 
 @Component({
   selector: 'app-upper-navbar',
@@ -13,11 +14,20 @@ export class UpperNavbarComponent implements OnInit {
   navbar: (NavbarItem | DropdwenNavItem)[] = navbarData;
   form!: FormGroup;
   menuOpen: boolean = true;
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  cartItems!: number;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private cartService: AddToCartService
+  ) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       search: '',
+    });
+    this.cartService.cartProductsLength.subscribe((data: number) => {
+      this.cartItems = data;
     });
   }
   onSubmit(form: any) {
