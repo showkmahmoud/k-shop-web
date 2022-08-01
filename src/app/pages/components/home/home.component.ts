@@ -10,6 +10,7 @@ import { Product, PRODUCT_TYPE } from 'src/app/shared/products.type';
 export class HomeComponent implements OnInit {
   productLength!: number;
   productsData!: Product[];
+  products: Product[] = productsData;
   constructor() {}
 
   ngOnInit(): void {
@@ -21,6 +22,10 @@ export class HomeComponent implements OnInit {
     return new Array(starsNumber);
   }
   displayMore() {
-    this.productLength = productsData.length;
+    if (this.productLength != this.products.length) {
+      this.productLength = this.products.length;
+    } else {
+      this.productLength = 4;
+    }
   }
 }

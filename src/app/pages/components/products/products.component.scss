@@ -1,9 +1,15 @@
+.products-wrapper {
+  background: var(--layout-bg);
+  padding-top: 20px;
+  height: 100vh;
+}
 .product {
   background: var(--main-bg);
   border-radius: 10px;
   transition: 0.3s ease-in-out;
   position: relative;
   padding-bottom: 70px;
+  margin-bottom: 30px;
 }
 .not-found {
   text-align: center;

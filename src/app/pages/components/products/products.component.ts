@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 import { productsData } from 'src/app/shared/products.data';
 import { Product } from 'src/app/shared/products.type';
 
@@ -12,70 +11,38 @@ import { Product } from 'src/app/shared/products.type';
 export class ProductsComponent implements OnInit {
   @Input() products!: Product[];
   @Input() productLimit!: number;
-
+  url!: string;
   productsData!: Product[];
   noData: boolean = false;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    console.log('first');
     if (this.router.url.includes('categories')) {
-      if (!this.productsData) {
+      this.url = 'categories';
+      this.activatedRoute.queryParams.subscribe((params: any) => {
         this.productsData = productsData.filter(
-          (product) => product.category === this.router.url.split('/')[3]
+          (product) => product.category === params.category
         );
-      }
-
-      this.router.events
-        .pipe(filter((event) => event instanceof NavigationEnd))
-        .subscribe((event: NavigationEnd | any) => {
-          const category = event.url.split('/')[3];
-          this.productsData = productsData.filter(
-            (product) => product.category === category
-          );
-        });
+        this.dataCheck();
+      });
     } else if (this.router.url.includes('search')) {
-      if (!this.productsData) {
+      this.url = 'search';
+      this.activatedRoute.queryParams.subscribe((params: any) => {
         this.productsData = productsData.filter((product) =>
-          product.title.includes(this.router.url.split('/')[3])
+          product.title.includes(params.product)
         );
-      }
-      this.router.events
-        .pipe(filter((event) => event instanceof NavigationEnd))
-        .subscribe((event: NavigationEnd | any) => {
-          const value = event.url.split('/')[3];
-          console.log(value);
-          console.log(event.url);
-          this.productsData = productsData.filter((product) =>
-            product.title.includes(value)
-          );
-          console.log(this.productsData);
-        });
-      if (this.productsData.length == 0) {
-        this.noData = true;
-      }
+        this.dataCheck();
+      });
     } else {
       this.productsData = this.products ? this.products : productsData;
     }
   }
-  filterProduct(type: string) {
-    if (!this.productsData) {
-      this.productsData = productsData.filter(
-        (product) => product.category === this.router.url.split('/')[3]
-      );
+  dataCheck() {
+    if (this.productsData.length === 0) {
+      this.noData = true;
+    } else {
+      this.noData = false;
     }
-    this.router.url;
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd | any) => {
-        if (event.url.includes('categories')) {
-          const category = event.url.split('/')[3];
-          this.productsData = productsData.filter(
-            (product) => product.category === category
-          );
-        } else {
-        }
-      });
   }
   rateValue(starsNumber: number) {
     return new Array(starsNumber);

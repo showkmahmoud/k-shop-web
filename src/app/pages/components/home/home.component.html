@@ -71,7 +71,9 @@
       <div class="left-side-header row">
         <p class="header-left-side">وصل حديثا</p>
         <div class="btn view-btn" (click)="displayMore()">
-          <span> عرض الكل </span>
+          <span>
+            {{ productLength != products.length ? "عرض الكل" : "عرض اقل" }}
+          </span>
         </div>
       </div>
       <!-- ptoducts  -->

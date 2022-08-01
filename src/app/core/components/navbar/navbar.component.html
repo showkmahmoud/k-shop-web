@@ -28,9 +28,12 @@
       <!-- dropdown list -->
       <ul class="dropdown-list" *ngIf="dropDownOpen">
         <li class="dropdown-item" *ngFor="let li of item.items">
-          <a [routerLink]="['categories/' + li.category]" (click)="onClose()">{{
-            li.label
-          }}</a>
+          <a
+            [routerLink]="['categories']"
+            [queryParams]="{ category: li.category }"
+            (click)="onClose()"
+            >{{ li.label }}</a
+          >
         </li>
       </ul>
     </div>

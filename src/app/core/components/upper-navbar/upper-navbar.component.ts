@@ -21,8 +21,10 @@ export class UpperNavbarComponent implements OnInit {
     });
   }
   onSubmit(form: any) {
-    console.log(form.search);
-    this.router.navigate([`/k-shop/search/${form.search}`]);
+    this.router.navigate([`/k-shop/search`], {
+      queryParams: { product: `${form.search}` },
+    });
+    this.form.reset();
     this.menuOpen = true;
   }
   toggleMenu() {
