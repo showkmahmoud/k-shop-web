@@ -71,7 +71,8 @@ a.active {
   color: var(--main-color);
 }
 // wish-list
-.wish-list {
+.wish-list,
+.wish-list-item {
   background: var(--main-color);
   color: var(--main-bg);
   border: 1px solid transparent;

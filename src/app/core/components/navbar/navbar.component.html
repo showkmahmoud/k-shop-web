@@ -46,7 +46,7 @@
         (click)="onClose()"
         [ngClass]="{ 'in-active': dropDownOpen }"
         >{{ item.label }}
-        <span class="wish-list" *ngIf="item.label === 'قائمة الامنيات'">{{
+        <span class="wish-list-item" *ngIf="item.label === 'قائمة الامنيات'">{{
           whishListLength
         }}</span>
       </a>
