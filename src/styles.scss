@@ -50,9 +50,7 @@ ul {
 a {
   text-decoration: none;
 }
-p.title {
-  min-width: 150px;
-}
+
 .input {
   width: 1429px;
   padding-right: 65px;
@@ -124,13 +122,12 @@ input:focus {
     margin-bottom: 30px;
   }
   .col-m-12 {
-    width: 98%;
+    width: 99%;
   }
 }
 @media (max-width: 47.9375em) {
   .col-s-12 {
-    width: 98%;
+    width: 99%;
     margin: 0 auto 30px;
-    padding: 0 16px;
   }
 }
