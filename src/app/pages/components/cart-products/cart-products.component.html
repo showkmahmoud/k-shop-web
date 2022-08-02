@@ -1,9 +1,8 @@
 <div class="cart-wrapper">
   <div class="container">
-    <h2>قائمة المشتريات</h2>
-    <table>
+    <h2 *ngIf="cartProducts.length != 0">قائمة المشتريات</h2>
+    <table *ngIf="cartProducts.length != 0">
       <thead>
-        <!-- Table columns will be :   -->
         <tr>
           <th>اسم المنتج</th>
           <th>القسم</th>
@@ -14,12 +13,47 @@
       </thead>
       <tbody>
         <tr *ngFor="let product of cartProducts">
-          <td>{{ product.title }}</td>
-          <td>{{ product.category }}</td>
-          <td>{{ product.price }}</td>
-          <td>{{ product.quantity }}</td>
+          <td>
+            <p class="title">{{ product.title }}</p>
+          </td>
+          <td>
+            <p>{{ product.category }}</p>
+          </td>
+          <td>
+            <p>{{ product.price }}</p>
+          </td>
+          <td>
+            <div class="row justify-space-around">
+              <div class="quantity-wrapper" (click)="increaseQuantity(product)">
+                <i-bs
+                  class="quantity-btn"
+                  name="patch-plus"
+                  width="30"
+                  height="30"
+                >
+                </i-bs>
+              </div>
+              <p>{{ product.quantity }}</p>
+              <div class="quantity-wrapper" (click)="decreaseQuantity(product)">
+                <i-bs
+                  class="quantity-btn"
+                  name="patch-minus"
+                  width="30"
+                  height="30"
+                >
+                </i-bs>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="btn delete-btn">مسح</div>
+          </td>
         </tr>
       </tbody>
     </table>
+    <!-- if there is no products selected -->
+    <div *ngIf="cartProducts.length == 0">
+      <h3>لا يوجد مشتريات</h3>
+    </div>
   </div>
 </div>

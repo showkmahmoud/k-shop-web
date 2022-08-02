@@ -17,4 +17,7 @@ export class CartProductsComponent implements OnInit {
       console.log(this.cartProducts);
     });
   }
+  increaseQuantity(product: Product) {}
+  decreaseQuantity(product: Product) {}
+  removeProduct(product: Product) {}
 }

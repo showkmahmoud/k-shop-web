@@ -3,8 +3,10 @@
 <ul class="nav row">
   <!-- toggle button -->
   <li class="navbar-toggle">
-    <i-bs class="wish-list" name="heart-fill" width="30" height="30"> </i-bs>
-    <span class="wish-list-no">{{ whishListLength }}</span>
+    <a routerLink="/k-shop/wishlist">
+      <i-bs class="wish-list" name="heart-fill" width="30" height="30"> </i-bs>
+      <span class="wish-list-no">{{ whishListLength }}</span>
+    </a>
     <i-bs
       class="list-icon"
       name="list"

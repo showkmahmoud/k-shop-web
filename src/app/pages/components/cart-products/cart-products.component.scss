@@ -2,9 +2,14 @@
   background: var(--layout-bg);
   height: 100vh;
 }
-h2 {
+h2,
+h3 {
   font: normal normal normal 24px/45px Cairo;
   color: var(----new-btn-bg);
+}
+h3 {
+  text-align: center;
+  margin-top: 50px;
 }
 table {
   overflow: scroll;
@@ -13,7 +18,7 @@ table {
   margin-top: 20px;
 }
 th {
-  width: 25%;
+  min-width: 25%;
   padding-bottom: 15px;
   color: var(--main-color);
 }
@@ -22,8 +27,37 @@ tr {
   border-bottom: 2px solid var(--main-bg);
 }
 td {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   text-align: center;
   color: var(--price-color);
+  width: 20%;
+}
+.justify-space-around {
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.quantity-btn {
+  padding: 0 10px;
+}
+.quantity-btn:hover {
+  color: var(--main-color);
+}
+.delete-btn {
+  border: 1px solid var(--icon-color);
+  border-radius: 25px;
+  padding: 5px 0;
+}
+.delete-btn:hover {
+  color: var(--main-bg);
+  background: var(--main-color);
+}
+@media (max-width: 47.9375em) {
+  table {
+    display: block;
+    padding: 0 20px;
+  }
+  .delete-btn {
+    min-width: 150px;
+  }
 }
