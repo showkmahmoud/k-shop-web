@@ -34,30 +34,14 @@
               </td>
               <td>
                 <div class="row justify-space-around">
-                  <div
-                    class="quantity-wrapper"
-                    (click)="increaseQuantity(product)"
-                  >
-                    <i-bs
-                      class="quantity-btn"
-                      name="patch-plus"
-                      width="30"
-                      height="30"
-                    >
-                    </i-bs>
+                  <div class="btn" (click)="increaseQuantity(product)">
+                    <div class="quantity-btn">
+                      <span>+</span>
+                    </div>
                   </div>
                   <p>{{ product.quantity }}</p>
-                  <div
-                    class="quantity-wrapper"
-                    (click)="decreaseQuantity(product)"
-                  >
-                    <i-bs
-                      class="quantity-btn"
-                      name="patch-minus"
-                      width="30"
-                      height="30"
-                    >
-                    </i-bs>
+                  <div class="btn" (click)="decreaseQuantity(product)">
+                    <div class="quantity-btn"><span>-</span></div>
                   </div>
                 </div>
               </td>

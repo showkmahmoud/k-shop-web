@@ -46,18 +46,39 @@ td {
 }
 .quantity-btn {
   padding: 0 10px;
+  position: relative;
 }
-.quantity-btn:hover {
-  color: var(--main-color);
+.quantity-btn::after {
+  content: "";
+  border: 1px solid var(--main-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: -1px;
+  top: 1px;
+  transition: 0.3s ease-in-out;
+}
+.quantity-btn span {
+  font-size: 20px;
+  position: relative;
+  z-index: 7;
+  bottom: 4px;
+  right: 1px;
 }
 .delete-btn {
   border: 1px solid var(--icon-color);
   border-radius: 25px;
   padding: 5px 0;
 }
-.delete-btn:hover {
+.delete-btn:hover,
+.quantity-btn:hover::after {
   color: var(--main-bg);
   background: var(--main-color);
+}
+.btn:hover .quantity-btn span {
+  color: var(--main-bg);
 }
 @media (max-width: 47.9375em) {
   table {
