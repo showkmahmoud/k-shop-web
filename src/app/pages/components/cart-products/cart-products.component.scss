@@ -83,7 +83,7 @@ td {
   color: var(--main-bg);
   background: var(--main-color);
 }
-.btn:hover .quantity-btn span {
+.quantity-btn:hover span {
   color: var(--main-bg);
 }
 @media (max-width: 74.9375em) {
