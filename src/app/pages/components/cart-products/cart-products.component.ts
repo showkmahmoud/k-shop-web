@@ -20,4 +20,22 @@ export class CartProductsComponent implements OnInit {
   increaseQuantity(product: Product) {}
   decreaseQuantity(product: Product) {}
   removeProduct(product: Product) {}
+  icreaseCounter() {
+    let cartCounter = 0;
+    //increasing the counter
+    this.cartService.cartProductsLength.subscribe((data: any) => {
+      cartCounter = data;
+    });
+    this.cartService.addCartProducts(cartCounter + 1);
+  }
+  decreaseCounter(value?: number) {
+    let cartCounter = 0;
+    //increasing the counter
+    this.cartService.cartProductsLength.subscribe((data: any) => {
+      cartCounter = data;
+    });
+    this.cartService.addCartProducts(
+      value ? cartCounter - value : cartCounter - 1
+    );
+  }
 }
