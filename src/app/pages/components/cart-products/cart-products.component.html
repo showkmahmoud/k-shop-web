@@ -12,45 +12,53 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of cartProducts">
-          <td>
-            <p class="table-title">{{ product.title }}</p>
-          </td>
-          <td>
-            <p>{{ product.category }}</p>
-          </td>
-          <td>
-            <p>{{ product.price }}</p>
-          </td>
-          <td>
-            <div class="row justify-space-around">
-              <div class="quantity-wrapper" (click)="increaseQuantity(product)">
-                <i-bs
-                  class="quantity-btn"
-                  name="patch-plus"
-                  width="30"
-                  height="30"
+        <ng-container *ngFor="let product of cartProducts">
+          <tr *ngIf="product.quantity != 0">
+            <td>
+              <p class="table-title">{{ product.title }}</p>
+            </td>
+            <td>
+              <p>{{ product.category }}</p>
+            </td>
+            <td>
+              <p>{{ product.price }}</p>
+            </td>
+            <td>
+              <div class="row justify-space-around">
+                <div
+                  class="quantity-wrapper"
+                  (click)="increaseQuantity(product)"
                 >
-                </i-bs>
-              </div>
-              <p>{{ product.quantity }}</p>
-              <div class="quantity-wrapper" (click)="decreaseQuantity(product)">
-                <i-bs
-                  class="quantity-btn"
-                  name="patch-minus"
-                  width="30"
-                  height="30"
+                  <i-bs
+                    class="quantity-btn"
+                    name="patch-plus"
+                    width="30"
+                    height="30"
+                  >
+                  </i-bs>
+                </div>
+                <p>{{ product.quantity }}</p>
+                <div
+                  class="quantity-wrapper"
+                  (click)="decreaseQuantity(product)"
                 >
-                </i-bs>
+                  <i-bs
+                    class="quantity-btn"
+                    name="patch-minus"
+                    width="30"
+                    height="30"
+                  >
+                  </i-bs>
+                </div>
               </div>
-            </div>
-          </td>
-          <td>
-            <div (click)="removeProduct(product)" class="btn delete-btn">
-              مسح
-            </div>
-          </td>
-        </tr>
+            </td>
+            <td>
+              <div (click)="removeProduct(product)" class="btn delete-btn">
+                مسح
+              </div>
+            </td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
     <!-- if there is no products selected -->

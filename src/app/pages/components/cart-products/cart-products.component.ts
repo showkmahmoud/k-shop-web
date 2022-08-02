@@ -12,17 +12,44 @@ export class CartProductsComponent implements OnInit {
   constructor(private cartService: AddToCartService) {}
 
   ngOnInit(): void {
+    this.getcartProducts();
+  }
+  getcartProducts() {
     this.cartService.cartItems.subscribe((data: any) => {
       this.cartProducts = data;
-      console.log(this.cartProducts);
     });
   }
-  increaseQuantity(product: Product) {}
-  decreaseQuantity(product: Product) {}
-  removeProduct(product: Product) {}
+  increaseQuantity(product: Product) {
+    this.icreaseCounter();
+    this.cartProducts.map((item) => {
+      if (item.id === product.id) {
+        item.quantity = item.quantity + 1;
+        this.cartService.addToCartItems(this.cartProducts);
+      }
+    });
+  }
+  decreaseQuantity(product: Product) {
+    if (product.quantity === 0) {
+      return;
+    } else {
+      this.decreaseCounter();
+      this.cartProducts.map((item) => {
+        if (item.id === product.id) {
+          item.quantity = item.quantity - 1;
+          this.cartService.addToCartItems(this.cartProducts);
+        }
+      });
+    }
+  }
+  removeProduct(product: Product) {
+    this.decreaseCounter(product.quantity);
+    this.cartProducts = this.cartProducts.filter(
+      (item) => item.id != product.id
+    );
+    this.cartService.addToCartItems(this.cartProducts);
+  }
   icreaseCounter() {
     let cartCounter = 0;
-    //increasing the counter
     this.cartService.cartProductsLength.subscribe((data: any) => {
       cartCounter = data;
     });
@@ -30,7 +57,6 @@ export class CartProductsComponent implements OnInit {
   }
   decreaseCounter(value?: number) {
     let cartCounter = 0;
-    //increasing the counter
     this.cartService.cartProductsLength.subscribe((data: any) => {
       cartCounter = data;
     });

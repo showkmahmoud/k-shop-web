@@ -66,7 +66,6 @@ export class ProductsComponent implements OnInit {
     );
     this.productLimit = this.productsData.length;
     this.dataCheck();
-    console.log(this.productsData);
   }
   dataCheck() {
     if (this.productsData.length === 0) {
@@ -114,7 +113,6 @@ export class ProductsComponent implements OnInit {
       product.quantity += 1;
       cartItems.push(product);
     }
-    console.log(cartItems);
     this.cartService.addToCartItems(cartItems);
   }
 }

@@ -66,7 +66,6 @@ export class HomeComponent implements OnInit {
       product.quantity += 1;
       cartItems.push(product);
     }
-    console.log(cartItems);
     this.cartService.addToCartItems(cartItems);
   }
 }
