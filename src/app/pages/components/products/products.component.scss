@@ -108,3 +108,13 @@
 .heart-fill-icon {
   color: var(--main-color);
 }
+@media (max-width: 74.9375em) {
+  .products-wrapper {
+    height: calc(100vh - 110px);
+  }
+}
+@media (max-width: 47.9375em) {
+  .products-wrapper {
+    height: calc(100vh - 110px);
+  }
+}

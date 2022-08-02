@@ -81,7 +81,15 @@ td {
 .btn:hover .quantity-btn span {
   color: var(--main-bg);
 }
+@media (max-width: 74.9375em) {
+  .cart-wrapper {
+    height: calc(100vh - 110px);
+  }
+}
 @media (max-width: 47.9375em) {
+  .cart-wrapper {
+    height: calc(100vh - 110px);
+  }
   table {
     display: block;
     padding: 0 20px;
