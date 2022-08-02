@@ -1,66 +1,77 @@
 <div class="cart-wrapper">
   <div class="container">
-    <h2 *ngIf="cartProducts.length != 0">قائمة المشتريات</h2>
-    <table *ngIf="cartProducts.length != 0">
-      <thead>
-        <tr>
-          <th>اسم المنتج</th>
-          <th>القسم</th>
-          <th>السعر</th>
-          <th>الكمية</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngFor="let product of cartProducts">
-          <tr *ngIf="product.quantity != 0">
-            <td>
-              <p class="table-title">{{ product.title }}</p>
-            </td>
-            <td>
-              <p>{{ product.category }}</p>
-            </td>
-            <td>
-              <p>{{ product.price }}</p>
-            </td>
-            <td>
-              <div class="row justify-space-around">
-                <div
-                  class="quantity-wrapper"
-                  (click)="increaseQuantity(product)"
-                >
-                  <i-bs
-                    class="quantity-btn"
-                    name="patch-plus"
-                    width="30"
-                    height="30"
-                  >
-                  </i-bs>
-                </div>
-                <p>{{ product.quantity }}</p>
-                <div
-                  class="quantity-wrapper"
-                  (click)="decreaseQuantity(product)"
-                >
-                  <i-bs
-                    class="quantity-btn"
-                    name="patch-minus"
-                    width="30"
-                    height="30"
-                  >
-                  </i-bs>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div (click)="removeProduct(product)" class="btn delete-btn">
-                مسح
-              </div>
-            </td>
+    <ng-container *ngIf="cartProducts.length != 0">
+      <div class="row justify-space-between">
+        <h2>قائمة المشتريات</h2>
+        <h2 class="total-price">
+          <span class="price-title">السعر : </span>
+          <span class="price-amount">
+            {{ totalPrice | currency: productCurrency }}</span
+          >
+        </h2>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>اسم المنتج</th>
+            <th>القسم</th>
+            <th>السعر</th>
+            <th>الكمية</th>
+            <th></th>
           </tr>
-        </ng-container>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let product of cartProducts">
+            <tr *ngIf="product.quantity != 0">
+              <td>
+                <p class="table-title">{{ product.title }}</p>
+              </td>
+              <td>
+                <p>{{ product.category }}</p>
+              </td>
+              <td>
+                <p>{{ product.sale ? product.sale : product.price }}</p>
+              </td>
+              <td>
+                <div class="row justify-space-around">
+                  <div
+                    class="quantity-wrapper"
+                    (click)="increaseQuantity(product)"
+                  >
+                    <i-bs
+                      class="quantity-btn"
+                      name="patch-plus"
+                      width="30"
+                      height="30"
+                    >
+                    </i-bs>
+                  </div>
+                  <p>{{ product.quantity }}</p>
+                  <div
+                    class="quantity-wrapper"
+                    (click)="decreaseQuantity(product)"
+                  >
+                    <i-bs
+                      class="quantity-btn"
+                      name="patch-minus"
+                      width="30"
+                      height="30"
+                    >
+                    </i-bs>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div (click)="removeProduct(product)" class="btn delete-btn">
+                  مسح
+                </div>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </ng-container>
+
     <!-- if there is no products selected -->
     <div *ngIf="cartProducts.length == 0">
       <h3>لا يوجد مشتريات</h3>

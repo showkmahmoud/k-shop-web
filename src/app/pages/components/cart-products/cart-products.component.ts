@@ -9,6 +9,8 @@ import { AddToCartService } from 'src/app/shared/services/add-to-cart.service';
 })
 export class CartProductsComponent implements OnInit {
   cartProducts!: Product[];
+  totalPrice: number = 0;
+  productCurrency: any;
   constructor(private cartService: AddToCartService) {}
 
   ngOnInit(): void {
@@ -18,6 +20,7 @@ export class CartProductsComponent implements OnInit {
     this.cartService.cartItems.subscribe((data: any) => {
       this.cartProducts = data;
     });
+    this.getTotalPrice();
   }
   increaseQuantity(product: Product) {
     this.icreaseCounter();
@@ -27,6 +30,7 @@ export class CartProductsComponent implements OnInit {
         this.cartService.addToCartItems(this.cartProducts);
       }
     });
+    this.getTotalPrice();
   }
   decreaseQuantity(product: Product) {
     if (product.quantity === 0) {
@@ -39,6 +43,7 @@ export class CartProductsComponent implements OnInit {
           this.cartService.addToCartItems(this.cartProducts);
         }
       });
+      this.getTotalPrice();
     }
   }
   removeProduct(product: Product) {
@@ -47,6 +52,7 @@ export class CartProductsComponent implements OnInit {
       (item) => item.id != product.id
     );
     this.cartService.addToCartItems(this.cartProducts);
+    this.getTotalPrice();
   }
   icreaseCounter() {
     let cartCounter = 0;
@@ -63,5 +69,11 @@ export class CartProductsComponent implements OnInit {
     this.cartService.addCartProducts(
       value ? cartCounter - value : cartCounter - 1
     );
+  }
+  getTotalPrice() {
+    this.totalPrice = this.cartProducts.reduce((prev, item) => {
+      this.productCurrency = item.currency;
+      return prev + item.quantity * (item.sale ? item.sale : item.price);
+    }, 0);
   }
 }

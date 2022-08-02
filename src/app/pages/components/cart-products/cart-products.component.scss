@@ -11,6 +11,10 @@ h3 {
   text-align: center;
   margin-top: 50px;
 }
+.price-title {
+  margin-left: 20px;
+  color: var(--icon-color);
+}
 table {
   overflow: scroll;
   border-collapse: collapse;
@@ -27,7 +31,7 @@ tr {
   border-bottom: 2px solid var(--main-bg);
 }
 td {
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
   color: var(--price-color);
   width: 20%;
@@ -59,6 +63,9 @@ td {
   table {
     display: block;
     padding: 0 20px;
+  }
+  td {
+    padding: 10px;
   }
   .delete-btn {
     min-width: 150px;
