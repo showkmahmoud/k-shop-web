@@ -69,6 +69,9 @@ a.active {
 }
 .navbar-toggle .list-icon {
   color: var(--main-color);
+  position: relative;
+  z-index: 111;
+  top: 0px;
 }
 // wish-list
 .wish-list-item {
