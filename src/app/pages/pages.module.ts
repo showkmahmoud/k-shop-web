@@ -13,6 +13,7 @@ import { HomeSliderComponent } from './components/home-slider/home-slider.compon
 import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 import { ProductsComponent } from './components/products/products.component';
 import { CartProductsComponent } from './components/cart-products/cart-products.component';
+import { CategoriesPipe } from '../shared/pipes/categories.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CartProductsComponent } from './components/cart-products/cart-products.
     HomeSliderComponent,
     ProductsComponent,
     CartProductsComponent,
+    CategoriesPipe,
   ],
   imports: [
     CommonModule,

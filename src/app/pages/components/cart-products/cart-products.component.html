@@ -27,7 +27,7 @@
                 <p class="table-title">{{ product.title }}</p>
               </td>
               <td>
-                <p>{{ product.category }}</p>
+                <p>{{ product.category | categories }}</p>
               </td>
               <td>
                 <p>{{ product.sale ? product.sale : product.price }}</p>
