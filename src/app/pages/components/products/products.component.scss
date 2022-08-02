@@ -1,7 +1,7 @@
 .products-wrapper {
   background: var(--layout-bg);
   padding-top: 20px;
-  height: 100vh;
+  height: calc(100vh - 150px);
 }
 .product {
   background: var(--main-bg);
