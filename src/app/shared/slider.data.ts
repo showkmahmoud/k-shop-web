@@ -4,7 +4,7 @@ export type Slide = {
 };
 export const sliderData: Slide[] = [
   {
-    header: `شركة قرطبة `,
+    header: `الشركة الالكترونية`,
     description: `هدفنا هو منح الدعم والقوة لعملك الخاص عن
     طريق التقنية و المعرفة`,
   },
